@@ -1,0 +1,171 @@
+.landing {
+  height: 100vh;
+  overflow: hidden;
+  background-image: url('https://images.hdqwalls.com/download/graph-web-abstract-4k-hn-1920x1080.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  font.landing {
+  height: 100vh;
+  background-image: url('https://images.unsplash.com/photo-1605902711622-cfb43c4437d5?auto=format&fit=crop&w=1400&q=80');
+  background-size: cover;
+  background-position: center;
+  animation: bgZoom 20s infinite alternate ease-in-out;
+  position: relative;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+@keyframes bgZoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.65);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.landing-content {
+  text-align: center;
+  color: white;
+  max-width: 600px;
+}
+
+.landing-content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 0.4s;
+}
+
+.landing-content p {
+  font-size: 20px;
+  color: #dddddd;
+  margin-bottom: 30px;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 1s;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 1.6s;
+}
+
+.btn-group button {
+  padding: 12px 28px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-group button:first-child {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-group .secondary {
+  background-color: white;
+  color: #007bff;
+  border: 2px solid #007bff;
+}
+
+.btn-group button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+-family: 'Segoe UI', sans-serif;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.landing-content {
+  text-align: center;
+  color: white;
+  max-width: 600px;
+  animation: fadeIn 1s ease;
+}
+
+.landing-content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.landing-content p {
+  font-size: 20px;
+  color: #dddddd;
+  margin-bottom: 30px;
+}
+
+.btn-group button {
+  padding: 12px 28px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-group button:first-child {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-group .secondary {
+  background-color: white;
+  color: #007bff;
+  border: 2px solid #007bff;
+}
+
+.btn-group button:hover {
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

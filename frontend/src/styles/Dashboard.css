@@ -1,0 +1,101 @@
+.dashboard-page {
+  padding: 30px;
+  background-color: #f4f6f8;
+  min-height: 100vh;
+  background: linear-gradient(to right, #d70fc3, #eeae47);
+}
+
+.dashboard-header h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.filter-bar label {
+  font-weight: 500;
+  margin-right: 5px;
+}
+
+.filter-bar select {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.job-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.job-list label {
+  font-weight: bold;
+}
+
+.job-list select {
+  padding: 6px 12px;
+  border-radius: 6px;
+  margin-left: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.job-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+
+.job-card h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.job-card p {
+  margin: 5px 0;
+}
+
+.edit-btn {
+  background-color: #28a745;
+  margin-right: 10px;
+}
+
+.edit-btn:hover {
+  background-color: #218838;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
