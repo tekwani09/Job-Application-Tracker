@@ -363,7 +363,7 @@ const Login = () => {
             }}>
               Don't have an account?{' '}
               <a
-                href="/register"
+                href="/Job-Application-Tracker/register"
                 style={{
                   color: '#6b7280',
                   textDecoration: 'none',

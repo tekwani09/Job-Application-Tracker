@@ -14,7 +14,7 @@ import './styles/theme.css';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/Job-Application-Tracker">
       <Routes>
          <Route path="/" element={<Landing />} />
         <Route path="/register" element={<Register />} />
