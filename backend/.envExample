@@ -1,0 +1,2 @@
+MONGO_URL=example
+JWT_SECRET=example
