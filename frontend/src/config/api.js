@@ -1,0 +1,1 @@
+export const API_BASE_URL = 'https://job-application-tracker-g2lm.onrender.com';

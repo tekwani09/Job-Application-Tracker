@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Eye, EyeOff, Mail, Lock, CheckCircle, ArrowRight, Briefcase, Target, TrendingUp } from 'lucide-react';
+import API from '../services/api';
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [focusedField, setFocusedField] = useState('');
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -15,11 +18,17 @@ const Login = () => {
     e.preventDefault();
     setIsLoading(true);
     
-    // Simulate API call
-    setTimeout(() => {
-      setIsLoading(false);
+    try {
+      const res = await API.post('/auth/login', formData);
+      localStorage.setItem('token', res.data.token);
       alert('Login successful!');
-    }, 2000);
+      navigate('/dashboard');
+    } catch (err) {
+      console.error(err);
+      alert(err.response?.data?.message || 'Login failed');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const features = [

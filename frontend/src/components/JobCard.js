@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { API_BASE_URL } from '../config/api';
 
 const JobCard = ({ job, onSuggestions }) => {
   const [loading, setLoading] = useState(false);
@@ -9,7 +10,7 @@ const JobCard = ({ job, onSuggestions }) => {
     try {
       const token = localStorage.getItem('token');
       const response = await axios.get(
-        `http://localhost:8080/api/jobs/${job._id}/suggestions`,
+        `${API_BASE_URL}/api/jobs/${job._id}/suggestions`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       onSuggestions(response.data, job);

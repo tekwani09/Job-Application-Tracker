@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { API_BASE_URL } from '../config/api';
 import { useNavigate } from 'react-router-dom';
 import '../styles/AddJob.css';
 
@@ -26,7 +27,7 @@ const AddJob = () => {
     
     try {
       const response = await axios.post(
-        'http://localhost:8080/api/jobs/extract-url',
+        `${API_BASE_URL}/api/jobs/extract-url`,
         { jobUrl },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -58,7 +59,7 @@ const AddJob = () => {
     const token = localStorage.getItem('token');
     try {
       const response = await axios.post(
-        'http://localhost:8080/api/jobs',
+`${API_BASE_URL}/api/jobs`,
         { company, role, status, appliedDate, notes, jobUrl },
         { headers: { Authorization: `Bearer ${token}` } }
       );

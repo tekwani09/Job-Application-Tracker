@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { API_BASE_URL } from '../config/api';
 import { useParams, useNavigate } from 'react-router-dom';
 import '../styles/EditJob.css';
 
@@ -18,7 +19,7 @@ const EditJob = () => {
     const fetchJob = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await axios.get(`http://localhost:8080/api/jobs/${id}`, {
+        const res = await axios.get(`${API_BASE_URL}/api/jobs/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -46,7 +47,7 @@ const EditJob = () => {
     const token = localStorage.getItem('token');
 
     const response = await axios.put(
-      `http://localhost:8080/api/jobs/${id}`,
+      `${API_BASE_URL}/api/jobs/${id}`,
       { company, role, status, appliedDate, notes },
       {
         headers: {

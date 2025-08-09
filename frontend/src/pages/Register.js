@@ -17,7 +17,7 @@ const Register = () => {
     e.preventDefault();
     setIsLoading(true);
     try {
-      await API.post(`http://localhost:8080/api/auth/register`, formData);
+      await API.post('/auth/register', formData);
       alert('Registration successful! Please login.');
       navigate('/login');
     } catch (err) {

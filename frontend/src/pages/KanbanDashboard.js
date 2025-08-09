@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { API_BASE_URL } from '../config/api';
 import { useNavigate } from 'react-router-dom';
 import '../styles/KanbanDashboard.css';
 
@@ -26,7 +27,7 @@ const KanbanDashboard = () => {
   const fetchJobs = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:8080/api/jobs', {
+      const response = await axios.get(`${API_BASE_URL}/api/jobs`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setJobs(response.data);
@@ -48,7 +49,7 @@ const KanbanDashboard = () => {
     try {
       const token = localStorage.getItem('token');
       await axios.put(
-        `http://localhost:8080/api/jobs/${jobId}`,
+        `${API_BASE_URL}/api/jobs/${jobId}`,
         { status: newStatus },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -69,7 +70,7 @@ const KanbanDashboard = () => {
     try {
       const token = localStorage.getItem('token');
       const response = await axios.get(
-        'http://localhost:8080/api/jobs/recommendations/daily',
+        `${API_BASE_URL}/api/jobs/recommendations/daily`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setRecommendations(response.data);
@@ -85,7 +86,7 @@ const KanbanDashboard = () => {
     if (window.confirm('Are you sure you want to delete this job?')) {
       try {
         const token = localStorage.getItem('token');
-        await axios.delete(`http://localhost:8080/api/jobs/${jobId}`, {
+        await axios.delete(`${API_BASE_URL}/api/jobs/${jobId}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         fetchJobs();
@@ -186,7 +187,7 @@ const KanbanDashboard = () => {
                           try {
                             const token = localStorage.getItem('token');
                             const response = await axios.get(
-                              `http://localhost:8080/api/jobs/${job._id}/suggestions`,
+                              `${API_BASE_URL}/api/jobs/${job._id}/suggestions`,
                               { headers: { Authorization: `Bearer ${token}` } }
                             );
                             handleSuggestions(response.data, job);
@@ -394,7 +395,7 @@ const KanbanDashboard = () => {
                           try {
                             const token = localStorage.getItem('token');
                             await axios.post(
-                              'http://localhost:8080/api/jobs',
+                              `${API_BASE_URL}/api/jobs`,
                               {
                                 company: job.company,
                                 role: job.role,

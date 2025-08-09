@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { API_BASE_URL } from '../config/api';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Profile.css';
 
@@ -30,7 +31,7 @@ const Profile = () => {
   const fetchProfile = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:8080/api/profile', {
+      const response = await axios.get(`${API_BASE_URL}/api/profile`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (response.data.profile) {
@@ -48,7 +49,7 @@ const Profile = () => {
     try {
       const token = localStorage.getItem('token');
       await axios.put(
-        'http://localhost:8080/api/profile',
+        `${API_BASE_URL}/api/profile`,
         { profile },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -106,7 +107,7 @@ const Profile = () => {
     try {
       const token = localStorage.getItem('token');
       const response = await axios.post(
-        'http://localhost:8080/api/profile/parse-resume',
+        `${API_BASE_URL}/api/profile/parse-resume`,
         { resumeText },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -141,7 +142,7 @@ const Profile = () => {
       
       const token = localStorage.getItem('token');
       const response = await axios.post(
-        'http://localhost:8080/api/profile/parse-resume-file',
+        `${API_BASE_URL}/api/profile/parse-resume-file`,
         formData,
         { 
           headers: { 

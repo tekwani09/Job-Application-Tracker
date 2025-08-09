@@ -1,7 +1,11 @@
 import axios from 'axios';
 
+import { API_BASE_URL } from '../config/api';
+
+const API_BASE_URL_WITH_API = API_BASE_URL;
+
 const API = axios.create({
-  baseURL: 'http://localhost:8080/api',
+  baseURL: `${API_BASE_URL_WITH_API}/api`,
 });
 
 // Add JWT token to every request if available

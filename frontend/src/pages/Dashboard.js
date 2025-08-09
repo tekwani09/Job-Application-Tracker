@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { API_BASE_URL } from '../config/api';
 import { Link } from 'react-router-dom';
 import '../styles/Dashboard.css';
 
@@ -20,7 +21,7 @@ const Dashboard = () => {
       if (order) params.append('order', order);
 
       try {
-        const res = await axios.get(`http://localhost:8080/api/jobs?${params.toString()}`, {
+        const res = await axios.get(`${API_BASE_URL}/api/jobs?${params.toString()}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setJobs(res.data);
@@ -42,7 +43,7 @@ const Dashboard = () => {
 
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:8080/api/jobs/${id}`, {
+      await axios.delete(`${API_BASE_URL}/api/jobs/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
