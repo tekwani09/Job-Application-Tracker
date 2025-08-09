@@ -11,7 +11,7 @@ const app = express();
 
 connectDB();
 app.use(cors({
-    origin: ['http://localhost:3000', 'https://deekshanttekwani.github.io'],
+    origin: '*',
     credentials: true
 }));
 app.use(express.json({ limit: '10mb' }));
